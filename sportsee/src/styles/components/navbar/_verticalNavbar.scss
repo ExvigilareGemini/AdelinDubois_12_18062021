@@ -1,0 +1,22 @@
+.verticalNavbar {
+  @include flexBox-DirJuAl(column, flex-end, center);
+  grid-row: 2 / 15;
+  background-color: #020203;
+  &_iconContainer {
+    @include flexBox-DirJuAl(column, center, center);
+    flex-grow: 1;
+    width: 50%;
+  }
+  &_icon {
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  &_copyright {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotateZ(180deg);
+    margin: 5vh 0;
+    color: #ffffff;
+    font-size: 12px;
+  }
+}
