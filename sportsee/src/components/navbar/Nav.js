@@ -4,7 +4,7 @@ import VerticalNavbar from './VerticalNavbar';
 
 function Nav() {
 	return (
-		<nav className="Nav">
+		<nav className="nav">
 			<HorizontalNavbar />
 			<VerticalNavbar />
 		</nav>

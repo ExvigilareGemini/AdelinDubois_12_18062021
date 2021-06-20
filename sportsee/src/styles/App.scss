@@ -4,6 +4,8 @@
 //mixins
 @import "./utils/mixins";
 
-// navbar
-@import "../styles/components/navbar/horizontalNavbar";
-@import "../styles/components/navbar/verticalNavbar";
+//navbar
+@import "../styles/components/navbar/nav";
+
+//dashboard
+@import "../styles/components/dashboard/dashboard.scss";

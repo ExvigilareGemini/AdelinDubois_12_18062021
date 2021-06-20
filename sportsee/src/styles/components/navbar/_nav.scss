@@ -1,3 +1,29 @@
+.nav {
+  grid-column: 1 / 11;
+  grid-row: 1 / 13;
+  display: grid;
+  grid-template-columns: 10vw 1fr;
+  grid-template-rows: 1fr 10fr;
+}
+
+.horizontalNavbar {
+  grid-column: 1 / 11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #020203;
+
+  &_logo {
+    margin: 20px;
+  }
+  &_link {
+    margin-right: 80px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 24px;
+  }
+}
+
 .verticalNavbar {
   @include flexBox-DirJuAl(column, flex-end, center);
   grid-row: 2 / 15;
