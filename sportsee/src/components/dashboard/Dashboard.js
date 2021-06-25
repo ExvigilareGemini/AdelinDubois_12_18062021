@@ -1,4 +1,5 @@
 import React from 'react';
+import Cards from './cards/Cards';
 import getUserDatas from '../../callservice';
 
 class Dashboard extends React.Component {
@@ -6,7 +7,7 @@ class Dashboard extends React.Component {
 		super(props);
 
 		this.state = {
-			userName : null
+			userName : ''
 		};
 	}
 
@@ -17,8 +18,9 @@ class Dashboard extends React.Component {
 
 	render() {
 		return <nav className="dashboard">
-			<h1 className="dashboard_title">Bonjour <span className="dashboard_title_name">{this.state.userName ? this.state.userName : 'NOK'}</span>
-			</h1>
+			<h1 className="dashboard_title">Bonjour <span className="dashboard_title_name">{this.state.userName}</span> </h1>
+			<p className="dashboard_title dashboard_title_small">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+			<Cards />
 		</nav>;
 	}
 }
