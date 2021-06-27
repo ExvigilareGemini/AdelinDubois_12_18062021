@@ -1,16 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Card from "./Card";
-import getUserKeyDatas from "../../../callservice";
+import getUserDatas from "../../../callservice";
 import calorieIcon from "../../../img/cards/calories-icon.svg";
 import proteinIcon from "../../../img/cards/protein-icon.svg";
 import carbsIcon from "../../../img/cards/carbs-icon.svg";
 import fatIcon from "../../../img/cards/fat-icon.svg";
 
+/** Arrays used to populate created cards with the Cards component
+ */
 const cardsIconsArray = [calorieIcon, proteinIcon, carbsIcon, fatIcon];
 const unitsArray = ["kCal", "g", "g", "g"];
 const categoriesArray = ["Calories", "Proteines", "Glucides", "Lipides"];
 
+/** Class component rendering each card with appropriate informations.
+ */
 export class Cards extends React.Component {
   constructor(props) {
     super(props);
@@ -20,11 +24,16 @@ export class Cards extends React.Component {
     };
   }
 
+  /** Getting information in the database, stocking it in this.state and passing it to the displayed components.
+   */
   async componentDidMount() {
-    const userKeyDatas = await getUserKeyDatas(this.props.id);
+    const userKeyDatas = await getUserDatas(this.props.id);
     this.setState({ valueToDisplay: userKeyDatas.data.data.keyData });
   }
 
+  /** Render each card calling Card component and populate them with informations that are coming from database and populating arrays.
+   * @returns JSX array
+   */
   render() {
     return (
       <div className="cards_container">

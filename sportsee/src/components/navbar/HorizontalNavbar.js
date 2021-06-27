@@ -1,6 +1,10 @@
 import React from "react";
 import logo from "../../img/fullLogo.svg";
 
+/** Functional component of the navigation horizontal navbar
+ * 
+ * @returns JSX of the horizontal navbar "Header"
+ */
 function HorizontalNavbar() {
   return (
     <nav className="horizontalNavbar">

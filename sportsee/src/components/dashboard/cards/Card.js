@@ -1,6 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/** Functionnal component displaying a card containing all information to display
+ * @param {string} props.icon Icon path to display
+ * @param {number} props.value Value to diplay coming from database
+ * @param {string} props.unit Type of unit of the value
+ * @param {string} props.category Categorie of the value to display
+ * @returns JSX of a card
+ */
 function Card(props) {
   return (
     <div className="card">

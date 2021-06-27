@@ -1,7 +1,11 @@
 import React from "react";
+import Title from "./Title";
 import Cards from "./cards/Cards";
 import getUserDatas from "../../callservice";
 
+/** Class component of the dashboard, render React component include in the dashboard.
+ * 
+ */
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +16,8 @@ class Dashboard extends React.Component {
     };
   }
 
+  /** Getting information in the database, stocking it in this.state and passing it to the displayed components.
+   */
   async componentDidMount() {
     const userDatas = await getUserDatas(this.state.id);
     this.setState({ userName: userDatas.data.data.userInfos.firstName });
@@ -20,13 +26,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <nav className="dashboard">
-        <h1 className="dashboard_title">
-          Bonjour{" "}
-          <span className="dashboard_title_name">{this.state.userName}</span>{" "}
-        </h1>
-        <p className="dashboard_title dashboard_title_small">
-          Félicitation ! Vous avez explosé vos objectifs hier 👏
-        </p>
+        <Title userName={this.state.userName} />
         <Cards id={this.state.id} />
       </nav>
     );
