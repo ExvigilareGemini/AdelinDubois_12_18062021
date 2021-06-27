@@ -20,7 +20,7 @@ export class Cards extends React.Component {
 	}
 
 	async componentDidMount() {
-		const userKeyDatas = await getUserKeyDatas(12);
+		const userKeyDatas = await getUserKeyDatas(this.props.id);
 		this.setState({ valueToDisplay : userKeyDatas.data.data.keyData});
 	}
 

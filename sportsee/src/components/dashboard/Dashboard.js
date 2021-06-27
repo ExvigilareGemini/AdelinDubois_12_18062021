@@ -7,12 +7,13 @@ class Dashboard extends React.Component {
 		super(props);
 
 		this.state = {
-			userName : ''
+			userName : '',
+			id: 12
 		};
 	}
 
 	async componentDidMount() {
-		const userDatas = await getUserDatas(12);
+		const userDatas = await getUserDatas(this.state.id);
 		this.setState({ userName : userDatas.data.data.userInfos.firstName});
 	}
 
@@ -20,7 +21,7 @@ class Dashboard extends React.Component {
 		return <nav className="dashboard">
 			<h1 className="dashboard_title">Bonjour <span className="dashboard_title_name">{this.state.userName}</span> </h1>
 			<p className="dashboard_title dashboard_title_small">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-			<Cards />
+			<Cards id={this.state.id} />
 		</nav>;
 	}
 }
