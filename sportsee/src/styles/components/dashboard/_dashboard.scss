@@ -2,11 +2,11 @@
   grid-column: 2 / 11;
   grid-row: 3 / 13;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(12, 1fr);
 
   &_title {
-    grid-column: 2 / 13;
+    grid-column: 2 / 16;
     margin: 0;
     font-size: 48px;
     &_name {
