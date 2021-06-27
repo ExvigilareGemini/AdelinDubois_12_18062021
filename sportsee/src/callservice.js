@@ -9,3 +9,10 @@ export default function getUserDatas(userId) {
 		});
 	return datasToReturn;
 }
+export function getUserKeyDatas(userId) {
+	const datasToReturn = Axios.get(`/user/${userId}/key-data`)
+		.catch((err) => {
+			console.log(err);
+		});
+	return datasToReturn;
+}
