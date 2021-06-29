@@ -1,18 +1,20 @@
 import React from "react";
 import Title from "./Title";
 import Cards from "./cards/Cards";
+import Barchart from "./chart/Barchart";
 import getUserDatas from "../../callservice";
 
 /** Class component of the dashboard, render React component include in the dashboard.
- * 
+ *
  */
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      userName: "",
       id: 12,
+      userName: "",
+      keyData: ""
     };
   }
 
@@ -20,14 +22,17 @@ class Dashboard extends React.Component {
    */
   async componentDidMount() {
     const userDatas = await getUserDatas(this.state.id);
-    this.setState({ userName: userDatas.data.data.userInfos.firstName });
+    this.setState({ userName: userDatas.firstName });
+    this.setState({ keyData: userDatas.keyData });
   }
 
   render() {
+    console.log(this.state.firstName)
     return (
       <nav className="dashboard">
         <Title userName={this.state.userName} />
-        <Cards id={this.state.id} />
+        <Cards keyData={this.state.keyData}/>
+        <Barchart />
       </nav>
     );
   }
