@@ -2,6 +2,7 @@ import React from "react";
 import Title from "./Title";
 import Cards from "./cards/Cards";
 import Barchart from "./chart/Barchart";
+import Linechart from "./chart/Linechart";
 import getUserDatas from "../../callservice";
 
 /** Class component of the dashboard, render React component include in the dashboard.
@@ -31,6 +32,7 @@ class Dashboard extends React.Component {
         <Title userName={this.state.userName} />
         <Cards keyData={this.state.keyData}/>
         <Barchart id={this.state.id}/>
+        <Linechart id={this.state.id}/>
       </nav>
     );
   }

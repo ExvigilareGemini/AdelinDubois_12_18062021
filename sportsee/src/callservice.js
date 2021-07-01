@@ -34,3 +34,12 @@ export async function getUserActivity(userId) {
   const { sessions } = datasToReturn.data.data;
   return { sessions };
 }
+
+export async function getUserAverageSessions(userId) {
+  const datasToReturn = await Axios.get(`/user/${userId}/average-sessions`).catch((err) => {
+    console.log(err);
+  });
+  return datasToReturn.data.data
+  // const { sessions } = datasToReturn.data.data;
+  // return { sessions };
+}
