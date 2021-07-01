@@ -1,35 +1,53 @@
 import React from "react";
-import * as d3 from "d3";
+import {getUserActivity} from '../../../callservice.js';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 export class Barchart extends React.Component {
   constructor(props) {
     super(props);
-    this.myRef = React.createRef();
-    this.dataset = [100, 250, 280, 120, 400, 100, 250, 280, 120, 400];
+    this.state = {
+      data: ""
+    };
   }
-  componentDidMount() {
-    let widthVar = parseInt(d3.select(".barchart").style("width"));
-    let heightVar = parseInt(d3.select(".barchart").style("height"));
-    let svg = d3
-      .select(this.myRef.current)
-      .append("svg")
-      .attr("viewBox", [0, 0, widthVar, heightVar]);
 
-    let rect_width = 35;
-    svg
-      .selectAll("rect")
-      .data(this.dataset)
-      .enter()
-      .append("rect")
-      .attr("x", (d, i) => 5 + i * (rect_width + 5))
-      .attr("y", (d) => heightVar - d)
-      .attr("width", rect_width)
-      .attr("height", (d) => d)
-      .attr("fill", "teal");
-
+  async componentDidMount() {
+    const userDatas = await getUserActivity(this.props.id);
+    this.setState({ data: userDatas.sessions });
   }
+
   render() {
-    return <div className="barchart" ref={this.myRef}></div>;
+    return (
+      <ResponsiveContainer className="barchart"  width="100%" height="100%">
+        <BarChart
+          width={500}
+          height={300}
+          data={this.state.data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 5,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="kilogram" fill="#282D30" barSize={7}/>
+          <Bar dataKey="calories" fill="#E60000" barSize={7}/>
+        </BarChart>
+      </ResponsiveContainer>
+    );
   }
 }
 

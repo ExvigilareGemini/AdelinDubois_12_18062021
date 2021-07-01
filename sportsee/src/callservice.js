@@ -26,3 +26,11 @@ export default async function getUserDatas(userId) {
     keyData,
   };
 }
+
+export async function getUserActivity(userId) {
+  const datasToReturn = await Axios.get(`/user/${userId}/activity`).catch((err) => {
+    console.log(err);
+  });
+  const { sessions } = datasToReturn.data.data;
+  return { sessions };
+}

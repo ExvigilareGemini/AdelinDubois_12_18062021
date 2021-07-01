@@ -22,17 +22,15 @@ class Dashboard extends React.Component {
    */
   async componentDidMount() {
     const userDatas = await getUserDatas(this.state.id);
-    this.setState({ userName: userDatas.firstName });
-    this.setState({ keyData: userDatas.keyData });
+    this.setState({ userName: userDatas.firstName, keyData: userDatas.keyData });
   }
 
   render() {
-    console.log(this.state.firstName)
     return (
       <nav className="dashboard">
         <Title userName={this.state.userName} />
         <Cards keyData={this.state.keyData}/>
-        <Barchart />
+        <Barchart id={this.state.id}/>
       </nav>
     );
   }
