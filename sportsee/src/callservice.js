@@ -28,18 +28,36 @@ export default async function getUserDatas(userId) {
 }
 
 export async function getUserActivity(userId) {
-  const datasToReturn = await Axios.get(`/user/${userId}/activity`).catch((err) => {
-    console.log(err);
-  });
+  const datasToReturn = await Axios.get(`/user/${userId}/activity`).catch(
+    (err) => {
+      console.log(err);
+    }
+  );
   const { sessions } = datasToReturn.data.data;
   return { sessions };
 }
 
 export async function getUserAverageSessions(userId) {
-  const datasToReturn = await Axios.get(`/user/${userId}/average-sessions`).catch((err) => {
+  const datasToReturn = await Axios.get(
+    `/user/${userId}/average-sessions`
+  ).catch((err) => {
     console.log(err);
   });
-  return datasToReturn.data.data
-  // const { sessions } = datasToReturn.data.data;
-  // return { sessions };
+  return datasToReturn.data.data;
+}
+export async function getUserPerformance(userId) {
+  const datasToReturn = await Axios.get(`/user/${userId}/performance`).catch(
+    (err) => {
+      console.log(err);
+    }
+  );
+  const { data, kind } = datasToReturn.data.data;
+  const arrayToReturn = [];
+  data.forEach((el, index) => {
+    const firstLetterUpperKind =
+      kind[index + 1].charAt(0).toUpperCase() + kind[index + 1].slice(1);
+    let objectToPush = { value: el.value, kind: firstLetterUpperKind };
+    arrayToReturn[index] = objectToPush;
+  });
+  return arrayToReturn;
 }
