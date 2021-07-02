@@ -4,6 +4,7 @@ import Cards from "./cards/Cards";
 import Barchart from "./chart/Barchart";
 import Linechart from "./chart/Linechart";
 import Radarchart from "./chart/Radarchart";
+import RadialBarchart from "./chart/RadialBarchart";
 import getUserDatas from "../../callservice";
 
 /** Class component of the dashboard, render React component include in the dashboard.
@@ -16,7 +17,8 @@ class Dashboard extends React.Component {
     this.state = {
       id: 12,
       userName: "",
-      keyData: ""
+      keyData: "",
+      todayScore: ""
     };
   }
 
@@ -24,7 +26,7 @@ class Dashboard extends React.Component {
    */
   async componentDidMount() {
     const userDatas = await getUserDatas(this.state.id);
-    this.setState({ userName: userDatas.firstName, keyData: userDatas.keyData });
+    this.setState({ userName: userDatas.firstName, keyData: userDatas.keyData, todayScore: userDatas.todayScore });
   }
 
   render() {
@@ -35,6 +37,7 @@ class Dashboard extends React.Component {
         <Barchart id={this.state.id}/>
         <Linechart id={this.state.id}/>
         <Radarchart id={this.state.id}/>
+        <RadialBarchart todayScore={this.state.todayScore} />
       </nav>
     );
   }
