@@ -37,7 +37,7 @@ export class Linechart extends React.Component {
     return (
       <>
         <h2 className="linechart_title"> Durée moyenne des sessions</h2>
-        <ResponsiveContainer className="linechart" width="30%" height="100%">
+        <ResponsiveContainer className="linechart" width="32%" height="100%">
           <LineChart
             data={this.state.data}
             margin={{
