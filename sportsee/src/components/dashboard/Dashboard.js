@@ -35,9 +35,11 @@ class Dashboard extends React.Component {
         <Title userName={this.state.userName} />
         <Cards keyData={this.state.keyData}/>
         <Barchart id={this.state.id}/>
-        <Linechart id={this.state.id}/>
-        <Radarchart id={this.state.id}/>
-        <RadialBarchart todayScore={this.state.todayScore} />
+        <div className="dashboard_bottomChartContainer">
+          <Linechart id={this.state.id}/>
+          <Radarchart id={this.state.id}/>
+          <RadialBarchart todayScore={this.state.todayScore} />
+        </div>
       </nav>
     );
   }

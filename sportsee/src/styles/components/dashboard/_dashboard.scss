@@ -17,4 +17,10 @@
       font-size: 18px;
     }
   }
+  &_bottomChartContainer {
+    grid-column: 2 / 11;
+    grid-row: 9 / 12;
+    display: flex;
+    justify-content: space-between;
+  }
 }

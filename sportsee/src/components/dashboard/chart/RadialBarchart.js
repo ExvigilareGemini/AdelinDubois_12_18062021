@@ -1,39 +1,23 @@
 import React from "react";
+import RadialBarchartLabel from "./Label/RadialBarchartLabel";
 import {
   RadialBarChart,
   RadialBar,
   PolarAngleAxis,
   ResponsiveContainer,
+  LabelList,
+  Legend
 } from "recharts";
-
-
 
 export class RadialBarchart extends React.Component {
   render() {
     return (
-      <ResponsiveContainer
-        className="radialBarchart"
-        width="100%"
-        height="100%"
-      >
-        <RadialBarChart
-          cx="50%"
-          cy="50%"
-          innerRadius="100%"
-          outerRadius="90%"
-          barSize={20}
-          data={[{todayScore : this.props.todayScore}]}
-          startAngle={90}
-          endAngle={450}
-        >
-          <PolarAngleAxis type="number" domain={[0, 1]} tick={false}  />
-          <RadialBar
-            minAngle={0}
-            label={{ position: "insideStart", fill: "#fff" }}
-            background
-            clockWise
-            dataKey="todayScore"
-          />
+      <ResponsiveContainer className="radialBarchart" width="30%" height="100%">
+        <RadialBarChart cx="50%" cy="50%" innerRadius="80%" outerRadius="90%" barSize={20} data={[{ todayScore: this.props.todayScore, fill: "#E60000", name: "Score" }]} startAngle={90} endAngle={450}>
+          <PolarAngleAxis type="number" domain={[0, 1]} tick={false} background />
+          <LabelList dataKey="Test" />
+          <RadialBar dataKey="todayScore" label={<RadialBarchartLabel />} />
+          <Legend align="left" verticalAlign="top" iconSize="0" fill="#ffffff" />
         </RadialBarChart>
       </ResponsiveContainer>
     );

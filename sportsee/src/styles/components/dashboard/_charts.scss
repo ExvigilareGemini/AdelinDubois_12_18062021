@@ -1,24 +1,32 @@
 .barchart {
   grid-column: 2 / 11;
   grid-row: 3 / 8;
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
 }
 
 .linechart {
-  grid-column: 2 / 5;
-  grid-row: 9 / 12;
   justify-self: start;
-  background-color: #FBFBFB;
+  background-color: #ff0000;
+  border-radius: 5px;
+  &_title {
+    position: absolute;
+    margin: 15px 0 0 15px;
+    width: 10%;
+    z-index: 10;
+    font-size: 15px;
+    color: #FFFFFFe9;
+  }
+  &_tooltip {
+    background-color: #ffffff;
+    font-size: 10px;
+    padding: 1px 10px;
+  }
 }
 
 .radarchart {
-  grid-column: 5 / 8;
-  grid-row: 9 / 12;
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
 }
 
 .radialBarchart {
-  grid-column: 8 / 11;
-  grid-row: 9 / 12;
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
 }
