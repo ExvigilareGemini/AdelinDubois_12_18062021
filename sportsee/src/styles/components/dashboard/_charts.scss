@@ -11,10 +11,10 @@
   &_title {
     position: absolute;
     margin: 15px 0 0 15px;
-    width: 10%;
+    width: 15%;
     z-index: 10;
     font-size: 15px;
-    color: #FFFFFFe9;
+    color: #ffffffe9;
   }
   &_tooltip {
     background-color: #ffffff;
@@ -24,10 +24,31 @@
 }
 
 .radarchart {
-  background-color: #282D30;
+  background-color: #282d30;
   border-radius: 5px;
 }
 
 .radialBarchart {
   background-color: #fbfbfb;
+  &_title {
+    position: absolute;
+    top: 5%;
+    right: 23%;
+    font-size: 15px;
+  }
+  &_text {
+    position: absolute;
+    width: 10%;
+    top: 20%;
+    left: 79%;
+    text-align: center;
+    font-size: 2em;
+    @media screen and (max-height: 1000px) {
+      font-size: 1.3em;
+    }
+    &_small {
+      font-size: 0.5em;
+      color: #000000a6;
+    }
+  }
 }
