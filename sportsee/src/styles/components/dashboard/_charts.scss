@@ -1,7 +1,23 @@
 .barchart {
-  grid-column: 2 / 11;
-  grid-row: 3 / 8;
   background-color: #fbfbfb;
+  padding-top: 30px;
+  &_tooltip {
+    background-color: #E60000;
+    font-size: 10px;
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+  }
+  &_title {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    font-size: 15px;
+    font-weight: 100;
+  }
+  &_legend {
+    margin-top: 25px;
+  }
 }
 
 .linechart {

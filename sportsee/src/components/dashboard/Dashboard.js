@@ -18,7 +18,7 @@ class Dashboard extends React.Component {
       id: 12,
       userName: "",
       keyData: "",
-      todayScore: ""
+      todayScore: "",
     };
   }
 
@@ -26,18 +26,24 @@ class Dashboard extends React.Component {
    */
   async componentDidMount() {
     const userDatas = await getUserDatas(this.state.id);
-    this.setState({ userName: userDatas.firstName, keyData: userDatas.keyData, todayScore: userDatas.todayScore });
+    this.setState({
+      userName: userDatas.firstName,
+      keyData: userDatas.keyData,
+      todayScore: userDatas.todayScore,
+    });
   }
 
   render() {
     return (
       <nav className="dashboard">
         <Title userName={this.state.userName} />
-        <Cards keyData={this.state.keyData}/>
-        <Barchart id={this.state.id}/>
+        <Cards keyData={this.state.keyData} />
+        <div className="dashboard_barchartContainer">
+          <Barchart id={this.state.id} />
+        </div>
         <div className="dashboard_bottomChartContainer">
-          <Linechart id={this.state.id}/>
-          <Radarchart id={this.state.id}/>
+          <Linechart id={this.state.id} />
+          <Radarchart id={this.state.id} />
           <RadialBarchart todayScore={this.state.todayScore} />
         </div>
       </nav>

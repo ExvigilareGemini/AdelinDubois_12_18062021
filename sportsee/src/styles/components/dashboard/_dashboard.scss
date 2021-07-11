@@ -17,6 +17,11 @@
       font-size: 18px;
     }
   }
+  &_barchartContainer {
+    grid-column: 2 / 11;
+    grid-row: 3 / 8;
+    position: relative;
+  }
   &_bottomChartContainer {
     grid-column: 2 / 11;
     grid-row: 8 / 12;
