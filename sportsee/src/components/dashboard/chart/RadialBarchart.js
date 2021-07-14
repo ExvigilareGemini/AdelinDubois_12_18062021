@@ -8,6 +8,9 @@ import {
   Legend,
 } from "recharts";
 
+import PropTypes from "prop-types";
+
+
 export class RadialBarchart extends React.Component {
   render() {
     const dataPercentage = [
@@ -62,5 +65,10 @@ export class RadialBarchart extends React.Component {
     );
   }
 }
+
+RadialBarchart.propTypes = {
+  userName: PropTypes.number,
+};
+
 
 export default RadialBarchart;

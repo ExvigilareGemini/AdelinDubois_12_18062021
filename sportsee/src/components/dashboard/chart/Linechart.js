@@ -1,6 +1,8 @@
 import React from "react";
 import { getUserAverageSessions } from "../../../callservice.js";
 import { LineChart, Line, ResponsiveContainer, XAxis, Tooltip } from "recharts";
+import PropTypes from "prop-types";
+
 
 const XAxisValue = ["L", "M", "M", "J", "V", "S", "D"];
 
@@ -73,5 +75,9 @@ export class Linechart extends React.Component {
     );
   }
 }
+
+LineChart.propTypes = {
+  userName: PropTypes.number,
+};
 
 export default Linechart;

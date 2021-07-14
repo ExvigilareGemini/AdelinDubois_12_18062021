@@ -10,6 +10,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
+
 
 const CustomToolTip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -91,5 +93,9 @@ export class Barchart extends React.Component {
     );
   }
 }
+
+Barchart.propTypes = {
+  userName: PropTypes.number,
+};
 
 export default Barchart;

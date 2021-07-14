@@ -7,6 +7,8 @@ import {
   ResponsiveContainer,
   PolarGrid,
 } from "recharts";
+import PropTypes from "prop-types";
+
 
 export class Radarchart extends React.Component {
   constructor(props) {
@@ -40,5 +42,10 @@ export class Radarchart extends React.Component {
     );
   }
 }
+
+RadarChart.propTypes = {
+  userName: PropTypes.number,
+};
+
 
 export default Radarchart;

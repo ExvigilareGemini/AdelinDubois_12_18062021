@@ -33,7 +33,7 @@ function Cards(props) {
 }
 
 Cards.proptype = {
-  key: PropTypes.object,
+  keyData: PropTypes.object,
 };
 
 export default Cards;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 /** Display greetings and the name of the actual user
  *
@@ -17,3 +18,7 @@ export default function Title(props) {
     </div>
   );
 }
+
+Title.propTypes = {
+  userName: PropTypes.string,
+};
