@@ -20,11 +20,12 @@ export default async function getUserDatas(userId) {
   const datasToReturn = await Axios.get(`/user/${userId}`).catch((err) => {
     console.log(err);
   });
-  const { userInfos, keyData, todayScore } = datasToReturn.data.data;
+  const { userInfos, keyData, todayScore, score } = datasToReturn.data.data;
   return {
     ...userInfos,
     keyData,
     todayScore,
+    score
   };
 }
 

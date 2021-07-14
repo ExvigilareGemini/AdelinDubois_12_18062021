@@ -31,7 +31,7 @@ class Dashboard extends React.Component {
     this.setState({
       userName: userDatas.firstName,
       keyData: userDatas.keyData,
-      todayScore: userDatas.todayScore,
+      todayScore: userDatas.todayScore === undefined ? userDatas.score : userDatas.todayScore,
     });
   }
 
