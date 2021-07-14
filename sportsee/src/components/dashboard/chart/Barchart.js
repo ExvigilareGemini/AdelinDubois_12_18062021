@@ -33,7 +33,6 @@ export class Barchart extends React.Component {
 
   async componentDidMount() {
     const userDatas = await getUserActivity(this.props.id);
-    console.log(userDatas);
     this.setState({ data: userDatas.sessions });
   }
 

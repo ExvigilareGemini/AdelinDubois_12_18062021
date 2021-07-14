@@ -7,6 +7,8 @@ import Radarchart from "./chart/Radarchart";
 import RadialBarchart from "./chart/RadialBarchart";
 import getUserDatas from "../../callservice";
 
+const currentId = parseInt(window.location.pathname.slice(1))
+
 /** Class component of the dashboard, render React component include in the dashboard.
  *
  */
@@ -15,7 +17,7 @@ class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      id: 12,
+      id: currentId,
       userName: "",
       keyData: "",
       todayScore: "",
@@ -25,7 +27,7 @@ class Dashboard extends React.Component {
   /** Getting information in the database, stocking it in this.state and passing it to the displayed components.
    */
   async componentDidMount() {
-    const userDatas = await getUserDatas(this.state.id);
+    const userDatas = await getUserDatas(currentId);
     this.setState({
       userName: userDatas.firstName,
       keyData: userDatas.keyData,
