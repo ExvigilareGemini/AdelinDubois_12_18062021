@@ -1,5 +1,5 @@
 # SportSee :
-The dashboard for a sport web app.
+The dashboardof a sport web app.
 
 ## Technologies
 - JS
@@ -16,6 +16,6 @@ The dashboard for a sport web app.
 ## Installation
 - Fork the repository
 - Clone it - https://github.com/ExvigilareGemini/AdelinDubois_12_18062021.git
-- In the command prompt, go to the cloned repository and run `npm -install` to install all dependencies
+- In the command prompt, go to the cloned repository and run `npm install` to install all dependencies
 - Fork and clone the server (https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 - In command prompt, go to the server folder and run `npm run start`, then go to sportsee folder and run `npm run start`
