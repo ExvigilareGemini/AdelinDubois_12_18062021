@@ -10,7 +10,10 @@ import {
 
 import PropTypes from "prop-types";
 
-
+/** Class component of the radialBarchart using Recharts.js. Display the actual completion of the objective.
+ * @param {Number} todayScore the objective completion of the day from 0 (0%) to 1 (100%)
+ * @returns JSX React component
+ */
 export class RadialBarchart extends React.Component {
   render() {
     const dataPercentage = [
@@ -30,7 +33,6 @@ export class RadialBarchart extends React.Component {
           height="100%"
         >
           <RadialBarChart
-
             cx="50%"
             cy="50%"
             innerRadius="80%"
@@ -69,6 +71,5 @@ export class RadialBarchart extends React.Component {
 RadialBarchart.propTypes = {
   userName: PropTypes.number,
 };
-
 
 export default RadialBarchart;

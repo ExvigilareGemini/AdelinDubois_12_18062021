@@ -7,17 +7,16 @@ import Radarchart from "./chart/Radarchart";
 import RadialBarchart from "./chart/RadialBarchart";
 import getUserDatas from "../../callservice";
 
-const currentId = parseInt(window.location.pathname.slice(1))
-
 /** Class component of the dashboard, render React component include in the dashboard.
  *
+ * @returns JSX React component
  */
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      id: currentId,
+      id: this.props.match.params.id,
       userName: "",
       keyData: "",
       todayScore: "",
@@ -25,13 +24,18 @@ class Dashboard extends React.Component {
   }
 
   /** Getting information in the database, stocking it in this.state and passing it to the displayed components.
+   * If userDatas.todayScore is undefined, it take the value of the score value (backend property typo error)
    */
   async componentDidMount() {
-    const userDatas = await getUserDatas(currentId);
+    const userDatas = await getUserDatas(this.state.id);
+
     this.setState({
       userName: userDatas.firstName,
       keyData: userDatas.keyData,
-      todayScore: userDatas.todayScore === undefined ? userDatas.score : userDatas.todayScore,
+      todayScore:
+        userDatas.todayScore === undefined
+          ? userDatas.score
+          : userDatas.todayScore,
     });
   }
 
@@ -43,7 +47,7 @@ class Dashboard extends React.Component {
         <div className="dashboard_barchartContainer">
           <Barchart id={this.state.id} />
         </div>
-        <div className="dashboard_bottomChartContainer">
+        <div className="dashboard_bottomChartsContainer">
           <Linechart id={this.state.id} />
           <Radarchart id={this.state.id} />
           <RadialBarchart todayScore={this.state.todayScore} />

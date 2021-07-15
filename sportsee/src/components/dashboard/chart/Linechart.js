@@ -3,9 +3,14 @@ import { getUserAverageSessions } from "../../../callservice.js";
 import { LineChart, Line, ResponsiveContainer, XAxis, Tooltip } from "recharts";
 import PropTypes from "prop-types";
 
-
+/** Values to display on the X Axis of the linechart.
+ *
+ */
 const XAxisValue = ["L", "M", "M", "J", "V", "S", "D"];
 
+/**
+ * @returns JSX React component of the tooltip
+ */
 const CustomTooltip = ({ payload, active }) => {
   if (active && payload && payload.length) {
     return (
@@ -19,6 +24,10 @@ const CustomTooltip = ({ payload, active }) => {
   return null;
 };
 
+/** Class component of the linechart using Recharts.js. Display average session time for the week.
+ * @param {Number} id the id of the actual user
+ * @returns JSX React component
+ */
 export class Linechart extends React.Component {
   constructor(props) {
     super(props);
@@ -29,10 +38,10 @@ export class Linechart extends React.Component {
 
   async componentDidMount() {
     const userDatas = await getUserAverageSessions(this.props.id);
-    userDatas.sessions.forEach((el, index) => {
+    userDatas.forEach((el, index) => {
       el.day = XAxisValue[index];
     });
-    this.setState({ data: userDatas.sessions });
+    this.setState({ data: userDatas });
   }
 
   render() {

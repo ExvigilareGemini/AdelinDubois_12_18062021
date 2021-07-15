@@ -12,7 +12,9 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
-
+/**
+ * @returns JSX React component of the tooltip
+ */
 const CustomToolTip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -25,6 +27,10 @@ const CustomToolTip = ({ active, payload }) => {
   return null;
 };
 
+/** Class component of the barchart using Recharts.js. Display weight and burnt calories depending of the day of the week.
+ * @param {Number} id the id of the actual user
+ * @returns JSX React component
+ */
 export class Barchart extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +41,7 @@ export class Barchart extends React.Component {
 
   async componentDidMount() {
     const userDatas = await getUserActivity(this.props.id);
-    this.setState({ data: userDatas.sessions });
+    this.setState({ data: userDatas });
   }
 
   render() {

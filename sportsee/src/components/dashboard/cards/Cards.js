@@ -12,7 +12,13 @@ const cardsIconsArray = [calorieIcon, proteinIcon, carbsIcon, fatIcon];
 const unitsArray = ["kCal", "g", "g", "g"];
 const categoriesArray = ["Calories", "Proteines", "Glucides", "Lipides"];
 
-/** Functionnal component rendering each card with appropriate informations.
+/** Functionnal component rendering each card filled with food values.
+ * @param {Object} props.keyData Informations to display
+ * @property {Number} props.keyData.calorieCount Quantity of calories eaten
+ * @property {Number} props.keyData.proteinCount Quantity of proteins eaten
+ * @property {Number} props.keyData.carbohydrateCount Quantity of carbohydrates eaten
+ * @property {Number} props.keyData.lipidCount Quantity of lipids eaten
+ * @returns JSX React component
  */
 function Cards(props) {
   return (

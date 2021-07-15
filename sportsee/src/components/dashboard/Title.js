@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 /** Display greetings and the name of the actual user
  *
  * @param {string} props.userName The name of the actuel user
- * @returns JSX
+ * @returns JSX React component
  */
 export default function Title(props) {
   return (

@@ -9,7 +9,10 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 
-
+/** Class component of the radarchart using Recharts.js. Display performance score for intensity, speed, strength, endurance, energy and cardio.
+ * @param {Number} id the id of the actual user
+ * @returns JSX React component
+ */
 export class Radarchart extends React.Component {
   constructor(props) {
     super(props);
@@ -28,14 +31,18 @@ export class Radarchart extends React.Component {
       <ResponsiveContainer className="radarchart" width="32%" height="100%">
         <RadarChart cx="50%" cy="50%" outerRadius="65%" data={this.state.data}>
           <PolarGrid />
-          <PolarAngleAxis dataKey="kind" stroke="white" fontSize="10" tickLine={false} />
+          <PolarAngleAxis
+            dataKey="kind"
+            stroke="white"
+            fontSize="10"
+            tickLine={false}
+          />
           <Radar
             name="test"
             dataKey="value"
             stroke="#FF0101"
             fill="#FF0101"
             fillOpacity={0.6}
-            
           />
         </RadarChart>
       </ResponsiveContainer>
@@ -46,6 +53,5 @@ export class Radarchart extends React.Component {
 RadarChart.propTypes = {
   userName: PropTypes.number,
 };
-
 
 export default Radarchart;
