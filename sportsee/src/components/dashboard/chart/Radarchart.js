@@ -6,6 +6,7 @@ import {
   PolarAngleAxis,
   ResponsiveContainer,
   PolarGrid,
+  PolarRadiusAxis
 } from "recharts";
 import PropTypes from "prop-types";
 
@@ -37,8 +38,8 @@ export class Radarchart extends React.Component {
             fontSize="10"
             tickLine={false}
           />
+          <PolarRadiusAxis angle={0} domain={[0, 0]} stroke="#00000000"  />
           <Radar
-            name="test"
             dataKey="value"
             stroke="#FF0101"
             fill="#FF0101"
