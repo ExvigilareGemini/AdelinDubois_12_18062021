@@ -1,6 +1,12 @@
 import React from "react";
 import { getUserAverageSessions } from "../../../callservice.js";
-import { LineChart, Line, ResponsiveContainer, XAxis, Tooltip } from "recharts";
+import { 
+  LineChart, 
+  Line, 
+  ResponsiveContainer, 
+  XAxis, 
+  Tooltip 
+} from "recharts";
 import PropTypes from "prop-types";
 
 /** Values to display on the X Axis of the linechart.

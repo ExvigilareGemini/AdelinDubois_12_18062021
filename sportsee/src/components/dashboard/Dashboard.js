@@ -5,6 +5,7 @@ import Barchart from "./chart/Barchart";
 import Linechart from "./chart/Linechart";
 import Radarchart from "./chart/Radarchart";
 import RadialBarchart from "./chart/RadialBarchart";
+import ErrorMessage from "./ErrorMessage";
 import getUserDatas from "../../callservice";
 
 /** Class component of the dashboard, render React component include in the dashboard.
@@ -20,6 +21,8 @@ class Dashboard extends React.Component {
       userName: "",
       keyData: "",
       todayScore: "",
+      getResponse: false,
+      error: false,
     };
   }
 
@@ -28,7 +31,6 @@ class Dashboard extends React.Component {
    */
   async componentDidMount() {
     const userDatas = await getUserDatas(this.state.id);
-
     this.setState({
       userName: userDatas.firstName,
       keyData: userDatas.keyData,
@@ -36,12 +38,18 @@ class Dashboard extends React.Component {
         userDatas.todayScore === undefined
           ? userDatas.score
           : userDatas.todayScore,
+      getResponse: userDatas.getResponse,
+      error: userDatas.error,
     });
   }
 
   render() {
-    return (
-      <nav className="dashboard">
+    return !this.state.getResponse ? (
+      <ErrorMessage />
+    ) : this.state.error ? (
+      <ErrorMessage />
+    ) : (
+      <section className="dashboard">
         <Title userName={this.state.userName} />
         <Cards keyData={this.state.keyData} />
         <div className="dashboard_barchartContainer">
@@ -52,7 +60,7 @@ class Dashboard extends React.Component {
           <Radarchart id={this.state.id} />
           <RadialBarchart todayScore={this.state.todayScore} />
         </div>
-      </nav>
+      </section>
     );
   }
 }

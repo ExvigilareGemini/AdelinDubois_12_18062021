@@ -19,16 +19,30 @@ Axios.defaults.baseURL = "http://localhost:3000";
  * @property {Number} score If todayScore is undefinned, the property name of the objective score is this one
  */
 export default async function getUserDatas(userId) {
+  let errorValue = false;
   const datasToReturn = await Axios.get(`/user/${userId}`).catch((err) => {
-    console.log(err);
-  });
-  const { userInfos, keyData, todayScore, score } = datasToReturn.data.data;
-  return {
-    ...userInfos,
-    keyData,
-    todayScore,
-    score,
-  };
+    errorValue = true;
+  })
+  if (!errorValue) {
+    const { userInfos, keyData, todayScore, score } = datasToReturn.data.data;
+    return {
+      ...userInfos,
+      keyData,
+      todayScore,
+      score,
+      getResponse: true,
+      error: errorValue,
+    };
+  }
+  else {
+    return {
+      userName: "",
+      keyData: "",
+      todayScore:"",
+      getResponse: true,
+      error: true,
+    }
+  }
 }
 
 /** Get the user activity informations in the database corresponding to the userId
