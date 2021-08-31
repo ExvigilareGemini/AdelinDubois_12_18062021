@@ -1,0 +1,70 @@
+.barchart {
+  background-color: #fbfbfb;
+  padding-top: 30px;
+  &_tooltip {
+    background-color: #E60000;
+    font-size: 10px;
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+  }
+  &_title {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    font-size: 15px;
+    font-weight: 100;
+  }
+  &_legend {
+    margin-top: 25px;
+  }
+}
+
+.linechart {
+  justify-self: start;
+  background-color: #ff0000;
+  border-radius: 5px;
+  &_title {
+    position: absolute;
+    margin: 15px 0 0 15px;
+    width: 15%;
+    z-index: 10;
+    font-size: 15px;
+    color: #ffffffe9;
+  }
+  &_tooltip {
+    background-color: #ffffff;
+    font-size: 10px;
+    padding: 1px 10px;
+  }
+}
+
+.radarchart {
+  background-color: #282d30;
+  border-radius: 5px;
+}
+
+.radialBarchart {
+  background-color: #fbfbfb;
+  &_title {
+    position: absolute;
+    top: 5%;
+    right: 23%;
+    font-size: 15px;
+  }
+  &_text {
+    position: absolute;
+    width: 10%;
+    top: 20%;
+    left: 79%;
+    text-align: center;
+    font-size: 2em;
+    @media screen and (max-height: 1000px) {
+      font-size: 1.3em;
+    }
+    &_small {
+      font-size: 0.5em;
+      color: #000000a6;
+    }
+  }
+}

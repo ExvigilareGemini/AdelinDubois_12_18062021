@@ -1,0 +1,13 @@
+@import "./reset";
+@import "./grid";
+
+//mixins
+@import "./utils/mixins";
+
+//navbar
+@import "../styles/components/navbar/nav";
+
+//dashboard
+@import "../styles/components/dashboard/dashboard";
+@import "../styles/components/dashboard/cards";
+@import "../styles/components/dashboard/charts";
