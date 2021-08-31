@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/AdelinDubois_12_18062021/static/css/main.97fd31d2.chunk.css",
+    "main.js": "/AdelinDubois_12_18062021/static/js/main.4c36b70a.chunk.js",
+    "main.js.map": "/AdelinDubois_12_18062021/static/js/main.4c36b70a.chunk.js.map",
+    "runtime-main.js": "/AdelinDubois_12_18062021/static/js/runtime-main.02212202.js",
+    "runtime-main.js.map": "/AdelinDubois_12_18062021/static/js/runtime-main.02212202.js.map",
+    "static/js/2.1d06dc5d.chunk.js": "/AdelinDubois_12_18062021/static/js/2.1d06dc5d.chunk.js",
+    "static/js/2.1d06dc5d.chunk.js.map": "/AdelinDubois_12_18062021/static/js/2.1d06dc5d.chunk.js.map",
+    "index.html": "/AdelinDubois_12_18062021/index.html",
+    "static/css/main.97fd31d2.chunk.css.map": "/AdelinDubois_12_18062021/static/css/main.97fd31d2.chunk.css.map",
+    "static/js/2.1d06dc5d.chunk.js.LICENSE.txt": "/AdelinDubois_12_18062021/static/js/2.1d06dc5d.chunk.js.LICENSE.txt",
+    "static/media/bikeicon.22f466fe.svg": "/AdelinDubois_12_18062021/static/media/bikeicon.22f466fe.svg",
+    "static/media/calories-icon.3067c742.svg": "/AdelinDubois_12_18062021/static/media/calories-icon.3067c742.svg",
+    "static/media/carbs-icon.a633f839.svg": "/AdelinDubois_12_18062021/static/media/carbs-icon.a633f839.svg",
+    "static/media/fat-icon.5f240256.svg": "/AdelinDubois_12_18062021/static/media/fat-icon.5f240256.svg",
+    "static/media/fullLogo.01c4ed70.svg": "/AdelinDubois_12_18062021/static/media/fullLogo.01c4ed70.svg",
+    "static/media/protein-icon.fcd07c7d.svg": "/AdelinDubois_12_18062021/static/media/protein-icon.fcd07c7d.svg",
+    "static/media/swimicon.c135dfed.svg": "/AdelinDubois_12_18062021/static/media/swimicon.c135dfed.svg",
+    "static/media/weighticon.c9f62cf1.svg": "/AdelinDubois_12_18062021/static/media/weighticon.c9f62cf1.svg",
+    "static/media/zenicon.e6da2f73.svg": "/AdelinDubois_12_18062021/static/media/zenicon.e6da2f73.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.02212202.js",
+    "static/js/2.1d06dc5d.chunk.js",
+    "static/css/main.97fd31d2.chunk.css",
+    "static/js/main.4c36b70a.chunk.js"
+  ]
+}
