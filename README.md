@@ -1,7 +1,5 @@
 # Eighth project of the OpenclassRooms Front-End Course
 
-[Site here](https://exvigilaregemini.github.io/AdelinDubois_12_18062021/) !API Needed, see installation!
-
 The dashboard of a sport web app displaying graphics.
 
 # Technologies
